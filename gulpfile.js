@@ -51,7 +51,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('css-libs', ['less'], function() {
-	return gulp.src('app/css/*.css') // Выбираем файл для минификации
+	return gulp.src(['app/css/libs.css', 'app/css/main.css']) // Выбираем файл для минификации
 		.pipe(cssnano()) // Сжимаем
 		.pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
 		.pipe(gulp.dest('app/css')); // Выгружаем в папку app/css
